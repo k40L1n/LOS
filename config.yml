@@ -1,0 +1,14 @@
+production:
+  password: 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
+  theme_id: 142423359762
+  store: watbro.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+    - templates/*json
+development:
+  password: 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
+  theme_id: 133692653722
+  store: watbro.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+    - templates/*json
