@@ -1,0 +1,105 @@
+<section class="about-us">
+    <div class="about-us--content">
+        <div>
+            <h2>About Us</h2>
+            <p>The science behind Vedix is backed by Parkruti - a fundamental Ayurvedic concept of balance and harmony used to assess the inherent disposition individuals are born with. Prakruti is shaped by the governing forces of all life, or the Doshas.</p>
+        </div>
+        <div class="about-us--content-heading">
+            <p>All Vedix products are free from</p>
+            <div class="about-us--free-from">
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+            </div>
+        </div>
+    </div>
+    <div class="about-us--image"> 
+     {{
+        section.settings.image_desktop
+        | image_url: width: 1440
+        | image_tag:
+          widths: '300, 600',
+          sizes: 'auto',
+          fetchpriority: fetch_priority,
+          loading: loading,
+          class: 'img-fluid'
+      }}
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "LOS About Us",
+  "tag": "section",
+  "class": "los-about-us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Banner Image - Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Banner Image - Mobile"
+    },
+    {   
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "World’s First Personalised Ayurvedic Solution"
+    },
+    {   
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Get a personalised solution kit formulated by Ayurvedic Experts"
+    },
+    {   
+      "type": "url",
+      "id": "url",
+      "label": "Add a Link"
+    },
+    {   
+      "type": "text",
+      "id": "url_text",
+      "label": "Button text",
+      "default": "Begin Quiz"
+    }
+  ],
+   "presets": [
+    {
+      "name": "LOS About Us"
+    }
+  ]
+}
+
+{% endschema %}
+
+
+
+{% stylesheet %}
+    .about-us{
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 4rem;
+        display: grid;
+        grid-template-columns: 70rem 50rem;
+    }
+    .about-us--content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .about-us--free-from {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+{% endstylesheet %}

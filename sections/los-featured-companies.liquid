@@ -1,0 +1,84 @@
+<section class="featured-companies-wrapper">
+    <div class="featured-companies">
+        {% for block in section.blocks %}  
+            <div class="featured-companies--company">
+            {{
+                block.settings.image
+                | image_url: width: 700
+                | image_tag:
+                widths: '500 700',
+                sizes: 'auto',
+                fetchpriority: fetch_priority,
+                loading: loading,
+                class: 'img-fluid'
+            }}
+            </div>
+        {% endfor %}
+    </div>
+    <p class="featured-companies--content">{{ section.settings.content }}</p>
+</section>
+
+
+{% schema %}
+{
+  "name": "LOS Featured Companies",
+  "tag": "section",
+  "class": "featured",
+  "settings": [
+    {   
+      "type": "text",
+      "id": "content",
+      "label": "Content",
+      "default": "“Part of a customised three-product hair growth regimen, this shampoo gently cleanses grime bacteria, and excess oil from the scalp and promotes hair growth.”"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "ticker",
+      "name": "los-featured-companies",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "select the logo image",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LOS Featured Companies"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+.featured {
+    background-color: #badabd;
+}
+.featured-companies-wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+.featured-companies {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    grid-gap: 20px;
+}
+.featured-companies--content{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 2rem;
+    line-height: 1.2;
+}
+.featured-companies--company img{
+    max-height: 40px;
+    object-fit: contain;
+}
+{% endstylesheet %}

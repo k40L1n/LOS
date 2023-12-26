@@ -1,0 +1,149 @@
+:root{
+  --black: #131818;
+  --white: #ffffff;
+  --orange: #EB7462;
+}
+
+/* Custom Resets */
+
+* {
+  font-family: 'Anek Devanagari' !important;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+   font-family: 'Anek Devanagari' !important;
+   margin: 0;
+   color: var(--black);
+}
+
+h1{
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+p{
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+h1{
+  font-size: 7rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 4.2rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+a {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* Custom Classes */
+
+.font-light {
+  font-weight: 300;
+}
+
+
+.btn {
+  border: 1px solid var(--black);
+  min-width: 27rem;
+  padding:1.4rem 0;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* External Font Loaded */
+
+/* anek-devanagari-100 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-200 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 200;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-300 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-regular - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-500 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-600 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-700 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* anek-devanagari-800 - devanagari_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Anek Devanagari';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/anek-devanagari-v8-devanagari_latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

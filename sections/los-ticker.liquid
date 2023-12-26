@@ -1,0 +1,80 @@
+<section class="los-ticker">
+     {% for block in section.blocks %}  
+    <div class="los-ticker--block">
+     {{
+        block.settings.ticker_image
+        | image_url: width: 200
+        | image_tag:
+          widths: '150 200',
+          sizes: 'auto',
+          fetchpriority: fetch_priority,
+          loading: loading,
+          class: 'img-fluid block-image'
+      }}
+      <p>{{ block.settings.ticker_info }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+
+{% schema %}
+{
+  "name": "LOS Ticker",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "ticker",
+      "name": "ticker-info-block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "select the logo image",
+          "id": "ticker_image"
+        },
+        {
+          "type": "text",
+          "label": "enter the logo info",
+          "id": "ticker_info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LOS ticker"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+.los-ticker {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+
+.los-ticker--block {
+    display: flex;
+    justify-content: center;
+}
+
+.los-ticker--block p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 2;
+}
+
+.block-image{
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    margin: 0 1rem;
+}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
