@@ -1,0 +1,132 @@
+
+<section class="los-vedix-celebrities">
+    <div>
+        {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.sub_heading != blank  %}
+            <p>{{ section.settings.sub_heading }}</p>
+        {% endif %}
+    </div>
+
+    <div class="los-vedix-grid">
+        {% for block in section.blocks %}  
+       <div>
+         {{
+            block.settings.main_image
+            | image_url: width: 1440
+            | image_tag:
+            widths: '300, 600',
+            sizes: 'auto',
+            fetchpriority: fetch_priority,
+            loading: loading,
+            class: 'img-fluid main_image'
+        }}
+        {{
+            block.settings.secondary_image
+            | image_url: width: 1440
+            | image_tag:
+            widths: '300, 600',
+            sizes: 'auto',
+            fetchpriority: fetch_priority,
+            loading: loading,
+            class: 'img-fluid secondary_image'
+        }}
+        <p>{{ block.settings.text }}</p>
+       </div>
+       {% endfor %}
+    </div>
+    <div style="text-align:center;">
+        {% if section.settings.url != blank %}
+            <a href="{{ section.settings.url }}" class="btn">
+            {{ section.settings.url_text }}
+            </a>
+        {% endif %}
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "LOS Celebrities",
+  "tag": "section",
+  "class": "los-vedix",
+  "max_blocks": 6,
+  "settings": [
+        {
+          "type": "text",
+          "label": "enter the main text",
+          "id": "heading",
+          "default": "Vedix tackles the hair fall issue from the root! "
+        },
+        {
+          "type": "text",
+          "label": "enter the sub text",
+          "id": "sub_heading",
+          "default": "This is also one of the reasons why Ayurveda chooses one of the most easily understandable methods to measure the magnitude of the hair issue, the root cause, and the solution, with just a simple assessment. At Vedix, we call this method as the “Dosha Assessment”"
+        },
+        {   
+          "type": "url",
+          "id": "url",
+          "label": "Add a Link"
+        },
+        {   
+          "type": "text",
+          "id": "url_text",
+          "label": "Button text",
+          "default": "Begin Quiz"
+        }
+    ],
+  "blocks": [
+    {
+      "type": "ticker",
+      "name": "ticker-info-block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Select the primary image",
+          "id": "main_image"
+        },
+        {
+          "type": "image_picker",
+          "label": "Select the secondary image",
+          "id": "secondary_image"
+        },
+        {
+          "type": "text",
+          "label": "Enter the name",
+          "id": "text",
+          "default": "Lisa Lisa"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LOS Celebrities"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+
+.los-vedix-celebrities{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+    
+.los-vedix-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    text-align: center;
+}
+
+.secondary_image{
+    width: 12rem;
+}
+
+
+{% endstylesheet %}

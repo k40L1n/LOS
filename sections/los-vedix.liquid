@@ -1,0 +1,92 @@
+<section class="los-vedix-wrapper">
+    <div class="los-vedix-info">
+        {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.sub_heading != blank  %}
+            <p>{{ section.settings.sub_heading }}</p>
+        {% endif %}
+    </div>
+    <div class="los-vedix-graphics">
+        {% for block in section.blocks %}  
+            <div>
+                {{
+                    block.settings.image
+                    | image_url: width: 200
+                    | image_tag:
+                    widths: '150 200',
+                    sizes: 'auto',
+                    fetchpriority: fetch_priority,
+                    loading: loading,
+                    class: 'img-fluid'
+                }}
+                <p>{{ block.settings.text }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "LOS Vedix",
+  "tag": "section",
+  "class": "los-vedix",
+  "max_blocks": 6,
+  "settings": [
+        {
+          "type": "text",
+          "label": "enter the text",
+          "id": "heading",
+          "default": "Vedix tackles the hair fall issue from the root! "
+        },
+        {
+          "type": "text",
+          "label": "enter the text",
+          "id": "sub_heading",
+          "default": "This is also one of the reasons why Ayurveda chooses one of the most easily understandable methods to measure the magnitude of the hair issue, the root cause, and the solution, with just a simple assessment. At Vedix, we call this method as the “Dosha Assessment”"
+        }
+    ],
+  "blocks": [
+    {
+      "type": "ticker",
+      "name": "los-vedix",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "select the logo image",
+          "id": "image"
+        },
+        {
+          "type": "text",
+          "label": "enter the text",
+          "id": "text",
+          "default": "lorem ipsum"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LOS Vedix"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+ .los-vedix-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+    display: grid;
+    grid-template-columns: 70rem 50rem;
+ }
+
+ .los-vedix-graphics{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1.5rem;
+ }
+{% endstylesheet %}
