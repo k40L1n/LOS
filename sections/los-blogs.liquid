@@ -1,8 +1,8 @@
 
-<section class="los-vedix-celebrities">
+<section class="los-vedix-blogs">
     <div>
-        {% if section.settings.heading != blank %}
-            <h2>{{ section.settings.heading }}</h2>
+        {% if section.settings.main_heading != blank %}
+            <h2>{{ section.settings.main_heading }}</h2>
         {% endif %}
         {% if section.settings.sub_heading != blank  %}
             <p>{{ section.settings.sub_heading }}</p>
@@ -11,52 +11,42 @@
 
     <div class="los-vedix-grid">
         {% for block in section.blocks %}  
-       <div>
-         {{
-            block.settings.main_image
-            | image_url: width: 600
-            | image_tag:
-            widths: '300, 600',
-            sizes: 'auto',
-            fetchpriority: fetch_priority,
-            loading: loading,
-            class: 'img-fluid main_image'
-        }}
-        {{
-            block.settings.secondary_image
-            | image_url: width: 600
-            | image_tag:
-            widths: '300, 600',
-            sizes: 'auto',
-            fetchpriority: fetch_priority,
-            loading: loading,
-            class: 'img-fluid secondary_image'
-        }}
-        <p>{{ block.settings.text }}</p>
+       <div class="los-vedix-grid--col">
+         <div>
+            {{
+                block.settings.main_image
+                | image_url: width: 600
+                | image_tag:
+                widths: '300, 600',
+                sizes: 'auto',
+                fetchpriority: fetch_priority,
+                loading: loading,
+                class: 'img-fluid main_image'
+            }}
+         </div>
+         <div>
+            <span> Hair </span>
+            <h4>{{ block.settings.heading }}</h4>
+            <p>{{ block.settings.text }}</p>
+            <a href="{{ block.settings.url }}">{{ block.settings.url_text }}</a>
+         </div>
        </div>
        {% endfor %}
-    </div>
-    <div style="text-align:center;">
-        {% if section.settings.url != blank %}
-            <a href="{{ section.settings.url }}" class="btn">
-            {{ section.settings.url_text }}
-            </a>
-        {% endif %}
     </div>
 </section>
 
 
 {% schema %}
 {
-  "name": "LOS Celebrities",
+  "name": "LOS Blogs",
   "tag": "section",
-  "class": "los-vedix",
+  "class": "los-blogs",
   "max_blocks": 3,
   "settings": [
         {
           "type": "text",
           "label": "enter the main text",
-          "id": "heading",
+          "id": "main_heading",
           "default": "Vedix tackles the hair fall issue from the root! "
         },
         {
@@ -64,23 +54,12 @@
           "label": "enter the sub text",
           "id": "sub_heading",
           "default": "This is also one of the reasons why Ayurveda chooses one of the most easily understandable methods to measure the magnitude of the hair issue, the root cause, and the solution, with just a simple assessment. At Vedix, we call this method as the “Dosha Assessment”"
-        },
-        {   
-          "type": "url",
-          "id": "url",
-          "label": "Add a Link"
-        },
-        {   
-          "type": "text",
-          "id": "url_text",
-          "label": "Button text",
-          "default": "Begin Quiz"
         }
     ],
   "blocks": [
     {
-      "type": "ticker",
-      "name": "celebrities",
+      "type": "approach",
+      "name": "approach",
       "settings": [
         {
           "type": "image_picker",
@@ -88,22 +67,23 @@
           "id": "main_image"
         },
         {
-          "type": "image_picker",
-          "label": "Select the secondary image",
-          "id": "secondary_image"
+          "type": "text",
+          "label": "Enter the name",
+          "id": "heading",
+          "default": "Examining Doshas"
         },
         {
           "type": "text",
           "label": "Enter the name",
           "id": "text",
-          "default": "Lisa Lisa"
+          "default": "Answer simple questions about your hair, skin and wellness to help us assess your Unique Dosha Profile"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "LOS Celebrities"
+      "name": "LOS Approach"
     }
   ]
 }
@@ -128,5 +108,20 @@
     width: 12rem;
 }
 
+.counter {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
 
+.xcv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 {% endstylesheet %}

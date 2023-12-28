@@ -1,0 +1,85 @@
+
+<section>
+    <div class="box" style="background-image: url('{{ section.settings.image | img_url:'1440x' }}');">
+        <div class="box-top">
+            <div class="box-image">
+                {{
+                    section.settings.expert_image
+                    | image_url: width: 1440
+                    | image_tag:
+                    widths: '300, 600',
+                    sizes: 'auto',
+                    fetchpriority: fetch_priority,
+                    loading: loading,
+                    class: 'img-fluid'
+                }}
+            </div>
+            <div class="box-image--info">
+               <p>expert formulator</p>
+               <h2>zeel gandhi</h2>
+               <p>B.A.M.S</p>
+            </div>
+        </div>
+        <div class="box-bottom">
+            <p>"Vedix uses a group of herbs as opposed to one single herb so as to create the perfect formulation for your hair with no side effects"</p>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "LOS Experts",
+  "tag": "section",
+  "class": "los-experts",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    },
+    {   
+      "type": "image_picker",
+      "id": "expert_image",
+      "label": "Expert Image"
+
+    },
+    {   
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "World’s First Personalised Ayurvedic Solution"
+    },
+    {   
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading",
+      "default": "Get a personalised solution kit formulated by Ayurvedic Experts"
+    },
+    {   
+      "type": "url",
+      "id": "url",
+      "label": "Add a Link"
+    },
+    {   
+      "type": "text",
+      "id": "url_text",
+      "label": "Button text",
+      "default": "Begin Quiz"
+    }
+  ],
+   "presets": [
+    {
+      "name": "LOS Experts"
+    }
+  ]
+}
+
+{% endschema %}
+
+
+
+{% stylesheet %}
+ 
+{% endstylesheet %}
