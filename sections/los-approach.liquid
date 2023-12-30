@@ -12,6 +12,10 @@
     <div class="los-vedix-grid">
         {% for block in section.blocks %}  
        <div class="los-vedix-grid--col">
+
+        <div class="highlight-badge cutoff">
+          <h3>How it works</h3>
+        </div>
          <div>
             {{
                 block.settings.main_image
@@ -111,10 +115,23 @@
     align-items: center;
     line-height: 1;
 }
+.los-vedix-grid--col {
+  position: relative;
+}
 
 .xcv {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.highlight-badge {
+  border: 1px solid var(--black);
+  width: 22rem;
+  position: absolute;
+  top: -26px;
+  left: 0;
+   /* padding: 15px 0; */
+  background-color: var(--white);
 }
 {% endstylesheet %}

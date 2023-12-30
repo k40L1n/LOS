@@ -75,12 +75,46 @@ a {
   background-color: var(--orange);
 }
 
+/* Angled Cut CSS */
 
+.cutoff {
+  --background-color: white;
+  --border-color: var(--black);
+  --border-width: 1px;
+  --edge-size: 15px;
 
+  background: var(--background-color);
+  padding: 15px 0;
+  border: 0;
+  isolation: isolate;
+  -webkit-clip-path: polygon(0 0%, 100% 0, 100% calc(100% - var(--edge-size)), calc(100% - var(--edge-size)) 100%, 0 100%, 0% var(--edge-size));
+          clip-path: polygon(0 0%, 100% 0, 100% calc(100% - var(--edge-size)), calc(100% - var(--edge-size)) 100%, 0 100%, 0% var(--edge-size));
+}
 
+.cutoff::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--border-color);
+  z-index: -2;
+}
 
-
-
+.cutoff::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--background-color);
+  z-index: -1;
+  -webkit-clip-path: polygon(var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5), calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)), calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)), calc(var(--border-width)) calc(100% - var(--border-width)));
+          
+	clip-path: polygon(
+		var(--border-width) var(--border-width), 
+		calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width), 
+		calc(100% - var(--border-width)) var(--border-width), 
+		calc(100% - var(--border-width)) calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)), 
+		calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)), 
+		calc(var(--border-width)) calc(100% - var(--border-width)));
+}
 
 
 
