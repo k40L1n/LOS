@@ -55,12 +55,16 @@ a {
 }
 
 
-/* Custom Classes */
+/* Custom helper Classes */
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .font-light {
   font-weight: 300;
 }
-
 
 .btn {
   border: 1px solid var(--black);

@@ -1,0 +1,202 @@
+<section class="container">
+    <div class="slider">
+        <div class="slide active slide-1">
+           <div class="images">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_287.png?v=1703852789" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_288.png?v=1703852789" alt="">
+            </div>
+           <div>
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
+            <b>Shafaq naaz</b>
+            <span>Kolkata</span>
+           </div>
+        </div>
+        <div class="slide slide-2">
+           <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            </div>
+           <div>
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
+            <b>Shafaq naaz</b>
+            <span>Kolkata</span>
+           </div>
+        </div>
+        <div class="slide slide-3">
+           <div>
+            <img src="" alt="">
+            <img src="" alt="">
+            </div>
+           <div>
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
+            <b>Shafaq naaz</b>
+            <span>Kolkata</span>
+           </div>
+        </div>
+    </div>
+    <button class="prev">Prev</button>
+    <button class="next">Next</button>
+</section>
+
+{% schema %}
+{
+  "name": "LOS Testimonials",
+  "tag": "section",
+  "class": "los-blogs",
+  "max_blocks": 3,
+  "settings": [
+        {
+          "type": "text",
+          "label": "enter the main text",
+          "id": "main_heading",
+          "default": "Vedix tackles the hair fall issue from the root! "
+        },
+        {
+          "type": "image_picker",
+          "label": "Select the primary image",
+          "id": "main_image"
+        },
+        {
+          "type": "text",
+          "label": "enter the sub text",
+          "id": "sub_heading",
+          "default": "This is also one of the reasons why Ayurveda chooses one of the most easily understandable methods to measure the magnitude of the hair issue, the root cause, and the solution, with just a simple assessment. At Vedix, we call this method as the “Dosha Assessment”"
+        }
+    ],
+  "blocks": [
+    {
+      "type": "approach",
+      "name": "approach",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Select the primary image",
+          "id": "main_isdsadsmage"
+        },
+        {
+          "type": "text",
+          "label": "Enter the heading",
+          "id": "heading",
+          "default": "Lorem Ipsum, Chai paani kam"
+        },
+        {
+          "type": "text",
+          "label": "Enter the text",
+          "id": "text",
+          "default": "Answer simple questions about your hair, skin and wellness to help us assess your Unique Dosha Profile"
+        },
+        {   
+          "type": "url",
+          "id": "url",
+          "label": "Add a Link"
+        },
+        {   
+          "type": "text",
+          "id": "url_text",
+          "label": "Button text",
+          "default": "Begin Quiz"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LOS Testimonials"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+
+/* CSS styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column; /* Set vertical direction */
+  background-color: red;
+}
+
+.slide {
+  margin-top: 2rem;
+  height: 100%; /* Adjust height as needed */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  background-color: aqua;
+}
+
+
+.images{
+    display: flex;
+}
+
+.active {
+  display: grid;
+  transform: translateY(0); /* Display active slide */
+  grid-template-columns: 2fr 3fr;
+}
+
+.prev,
+.next {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* Add opacity transition */
+  opacity: 0.5; /* Initial opacity */
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 1; /* Increase opacity on hover */
+}
+
+{% endstylesheet %}
+
+
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  document.querySelector(".next").addEventListener("click", nextSlide);
+  document.querySelector(".prev").addEventListener("click", prevSlide);
+
+  showSlide(currentSlide);
+});
+
+</script>
+
+

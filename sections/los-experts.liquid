@@ -1,28 +1,28 @@
 
-<section>
-    <div class="box" style="background-image: url('{{ section.settings.image | img_url:'1440x' }}');">
-        <div class="box-top">
-            <div class="box-image">
-                {{
-                    section.settings.expert_image
-                    | image_url: width: 1440
-                    | image_tag:
-                    widths: '300, 600',
-                    sizes: 'auto',
-                    fetchpriority: fetch_priority,
-                    loading: loading,
-                    class: 'img-fluid'
-                }}
-            </div>
-            <div class="box-image--info">
-               <p>expert formulator</p>
-               <h2>zeel gandhi</h2>
-               <p>B.A.M.S</p>
-            </div>
-        </div>
-        <div class="box-bottom">
-            <p>"Vedix uses a group of herbs as opposed to one single herb so as to create the perfect formulation for your hair with no side effects"</p>
-        </div>
+<section class="expert" style="background-image: url('{{ section.settings.image | img_url:'1440x' }}');">
+
+
+    <div class="expert-box">
+      <div class="expert-box--image">
+         {{
+            section.settings.expert_image
+            | image_url: width: 1440
+            | image_tag:
+            widths: '300, 600',
+            sizes: 'auto',
+            fetchpriority: fetch_priority,
+            loading: loading,
+            class: 'img-fluid'
+         }}
+      </div>
+      <div class="expert-box--expert">
+          <p>expert formulator</p>
+          <h2>zeel gandhi</h2>
+          <p>B.A.M.S</p>
+      </div>
+      <div class="expert-box--info">
+        <p>"Vedix uses a group of herbs as opposed to one single herb so as to create the perfect formulation for your hair with no side effects"</p>
+      </div>
     </div>
 </section>
 
@@ -82,4 +82,52 @@
 
 {% stylesheet %}
  
+
+.expert{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 720px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.expert-box{
+    display: grid;
+    width: 450px;
+    border: 1px solid var(--black);
+    grid-template-columns: 1.5fr 2.5fr;
+    grid-template-areas: 
+    "image expert expert"
+    "image expert expert"
+    "info info info";
+}
+
+.expert-box--image {
+  grid-area: image;
+  border: 1px solid var(--black);
+  border-left: 0px;
+  border-top: 0;
+}
+
+.expert-box--image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.expert-box--expert {
+  grid-area: expert;
+  border: 1px solid var(--black);
+  border-left: 0px;
+  border-top: 0;
+  border-right: 0;
+  background-color: var(--white);
+}
+
+
+.expert-box--info {
+  grid-area: info;
+  background-color: var(--white);
+  padding: 1rem;
+}
 {% endstylesheet %}
