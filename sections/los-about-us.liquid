@@ -1,23 +1,42 @@
-<section class="about-us container">
+<section class="about-us section-spacing-lg">
     <div class="about-us--content">
+
         <div>
             <h2>About Us</h2>
-            <p>The science behind Vedix is backed by Parkruti - a fundamental Ayurvedic concept of balance and harmony used to assess the inherent disposition individuals are born with. Prakruti is shaped by the governing forces of all life, or the Doshas.</p>
+            <p class="pt-20">The science behind Vedix is backed by Parkruti - a fundamental Ayurvedic concept of balance and harmony used to assess the inherent disposition individuals are born with. Prakruti is shaped by the governing forces of all life, or the Doshas.</p>
         </div>
-        <div class="about-us--content-heading">
+
+        <div class="about-us--content-highlights section-spacing-md">
             <p>All Vedix products are free from</p>
-            <div class="about-us--free-from">
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
-                <div>{% render 'los-red-cross-icon' %}Animal Testing</div>
+            <div class="about-us--free-from pt-20">
+                <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Animal Testing</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Sulphate</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Preservatives</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Cruelty</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Paraben</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Colour</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Side-Effects</p>
+                </div>
+                 <div>{% render 'los-red-cross-icon' %}
+                  <p class="pl-10 font-small">Harmful Chemicals</p>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="about-us--image"> 
      {{
         section.settings.image_desktop
@@ -85,19 +104,34 @@
 
 
 {% stylesheet %}
+
     .about-us{
         gap: 4rem;
         display: grid;
         grid-template-columns: 70rem 50rem;
+        place-content: center;
     }
     .about-us--content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+
     .about-us--free-from {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-template-rows: repeat(2,1fr);
     }
+
+     .about-us--free-from div{
+      display: flex;
+      align-items: center;
+    }
+
+    .about-us--content-highlights {
+      background-color: var(--skin-dark);
+
+    }
+     
+
 {% endstylesheet %}

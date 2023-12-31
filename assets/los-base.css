@@ -2,6 +2,8 @@
   --black: #131818;
   --white: #ffffff;
   --orange: #EB7462;
+  --skin: #faf7f1;
+  --skin-dark: #f7efdf;
 }
 
 /* Custom Resets */
@@ -25,6 +27,7 @@ p{
   font-size: 2rem;
   font-weight: 400;
   letter-spacing: normal;
+  line-height: 1.4;
 }
 
 h1{
@@ -117,7 +120,55 @@ a {
 }
 
 
+.font-small {
+  font-size: 14px;
+}
 
+.p-0 {
+  padding:0 !important;
+}
+
+.pl-10{
+  padding-left: 10px;
+}
+
+.pt-20{
+  padding-top: 20px;
+}
+
+.pt-40{
+  padding-top: 40px
+}
+
+.section-spacing-md {
+   padding: 20px;
+}
+
+.py-20{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.py-40{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px){
+  .section-spacing-md {
+   padding: 40px;
+  }
+}
+
+.section-spacing-lg {
+   padding: 40px;
+}
+
+@media screen and (min-width: 768px){
+  .section-spacing-lg {
+   padding: 60px;
+  }
+}
 
 
 

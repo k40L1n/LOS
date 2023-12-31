@@ -12,7 +12,6 @@
   endif
 -%}
 
-
 <section class="los-banner">
      <div class="los-banner--image">
        {{
@@ -30,7 +29,7 @@
       <div class="los-info">
 
         {% if section.settings.heading != blank %}
-        <h1>{{ section.settings.heading }}</h1>
+          <h1>{{ section.settings.heading }}</h1>
         {% endif %}
 
           {% if section.settings.sub_heading != blank %}
@@ -138,9 +137,3 @@
 }
 
 {% endstylesheet %}
-
-
-
-
-{% javascript %}
-{% endjavascript %}

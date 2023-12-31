@@ -1,4 +1,4 @@
-<section class="los-ticker">
+<section class="los-ticker-1">
      {% for block in section.blocks %}  
     <div class="los-ticker--block">
      {{
@@ -11,21 +11,20 @@
           loading: loading,
           class: 'img-fluid block-image'
       }}
-      <p>{{ block.settings.ticker_info }}</p>
+      <p class="p-0">{{ block.settings.ticker_info }}</p>
     </div>
     {% endfor %}
 </section>
 
-
 {% schema %}
 {
-  "name": "LOS Ticker",
+  "name": "LOS Ticker 1",
   "tag": "section",
   "settings": [],
   "blocks": [
     {
       "type": "ticker",
-      "name": "ticker-info-block",
+      "name": "ticker-1-info-block",
       "settings": [
         {
           "type": "image_picker",
@@ -42,28 +41,34 @@
   ],
   "presets": [
     {
-      "name": "LOS Ticker"
+      "name": "LOS Ticker 1"
     }
   ]
 }
 {% endschema %}
 
 {% stylesheet %}
-.los-ticker {
+.los-ticker-1 {
     display: grid;
     grid-template-columns: repeat(5,1fr);
+    border: 1px solid var(--black);
+}
+
+.los-ticker-1 p {
+    line-height: 2;
 }
 
 .los-ticker--block {
     display: flex;
     justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .los-ticker--block p {
     font-size: 18px;
     font-weight: 400;
     color: #666666;
-    padding-bottom: 10px;
 }
 
 .block-image{

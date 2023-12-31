@@ -16,11 +16,14 @@
          }}
       </div>
       <div class="expert-box--expert">
-          <p>expert formulator</p>
+          <div>
+          <img class="img-fluid" src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/tick-mark.png" alt="">
+           <p>expert ayurvedic formulator</p>
+          </div>
           <h2>zeel gandhi</h2>
           <p>B.A.M.S</p>
       </div>
-      <div class="expert-box--info">
+      <div class="expert-box--info cutoff">
         <p>"Vedix uses a group of herbs as opposed to one single herb so as to create the perfect formulation for your hair with no side effects"</p>
       </div>
     </div>
@@ -92,22 +95,32 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.expert-box--expert img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.expert-box--expert div {
+  display: flex;
+  align-items: center;
+}
+
 .expert-box{
     display: grid;
     width: 450px;
-    border: 1px solid var(--black);
     grid-template-columns: 1.5fr 2.5fr;
     grid-template-areas: 
     "image expert expert"
     "image expert expert"
     "info info info";
+    position: relative;
 }
 
 .expert-box--image {
   grid-area: image;
   border: 1px solid var(--black);
-  border-left: 0px;
-  border-top: 0;
 }
 
 .expert-box--image img {
@@ -118,16 +131,18 @@
 .expert-box--expert {
   grid-area: expert;
   border: 1px solid var(--black);
-  border-left: 0px;
-  border-top: 0;
-  border-right: 0;
+  border-left: 0;
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
 }
-
 
 .expert-box--info {
   grid-area: info;
   background-color: var(--white);
   padding: 1rem;
+  padding: 20px !important;
 }
 {% endstylesheet %}

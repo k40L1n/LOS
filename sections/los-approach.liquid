@@ -5,17 +5,20 @@
             <h2>{{ section.settings.main_heading }}</h2>
         {% endif %}
         {% if section.settings.sub_heading != blank  %}
-            <p>{{ section.settings.sub_heading }}</p>
+            <p class="sub-heading">{{ section.settings.sub_heading }}</p>
         {% endif %}
     </div>
 
-    <div class="los-vedix-grid">
+    <div class="los-vedix-approach-grid">
         {% for block in section.blocks %}  
        <div class="los-vedix-grid--col">
-
-        <div class="highlight-badge cutoff">
-          <h3>How it works</h3>
-        </div>
+        
+        {% if forloop.index == 1 %}
+          <div class="highlight-badge cutoff">
+            <h3>How it works</h3>
+          </div>  
+        {% endif %}
+        
          <div>
             {{
                 block.settings.main_image
@@ -28,8 +31,10 @@
                 class: 'img-fluid main_image'
             }}
          </div>
-         <div>
-            <div class="xcv"> <span class="counter">{{ forloop.index }}</span><h4>{{ block.settings.heading }}</h4></div>
+         <div class="los-approach-content">
+            <div class="counter-heading"> 
+              <span class="counter">{{ forloop.index }}</span><h4>{{ block.settings.heading }}</h4>
+            </div>
             <p>{{ block.settings.text }}</p>
          </div>
        </div>
@@ -42,7 +47,7 @@
 {
   "name": "LOS Approach",
   "tag": "section",
-  "class": "los-approach",
+  "class": "los-approach section-spacing-lg",
   "max_blocks": 3,
   "settings": [
         {
@@ -94,11 +99,12 @@
 
 {% stylesheet %}
     
-.los-vedix-grid {
+.los-vedix-approach-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.5rem;
     text-align: center;
+    padding-top: 7rem;
 }
 
 .secondary_image{
@@ -107,22 +113,35 @@
 
 .counter {
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border: 1px solid black;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
     line-height: 1;
-}
-.los-vedix-grid--col {
-  position: relative;
+    margin: 0 10px;
 }
 
-.xcv {
+.counter-heading {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.los-vedix-approach-grid .los-vedix-grid--col {
+  position: relative;
+  border: 1px solid var(--black);
+}
+
+.los-approach-content p{
+  padding: 20px 40px;
+}
+
+
+
+.los-vedix-approach sub-heading{
+  max-width: 660px;
 }
 
 .highlight-badge {
@@ -131,7 +150,7 @@
   position: absolute;
   top: -26px;
   left: 0;
-   /* padding: 15px 0; */
   background-color: var(--white);
 }
+
 {% endstylesheet %}

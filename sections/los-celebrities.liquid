@@ -1,15 +1,15 @@
 
-<section class="los-vedix-celebrities container">
+<section class="container">
     <div>
         {% if section.settings.heading != blank %}
             <h2>{{ section.settings.heading }}</h2>
         {% endif %}
         {% if section.settings.sub_heading != blank  %}
-            <p>{{ section.settings.sub_heading }}</p>
+            <p class="py-40">{{ section.settings.sub_heading }}</p>
         {% endif %}
     </div>
 
-    <div class="los-vedix-grid">
+    <div class="los-vedix-celebrities-grid">
         {% for block in section.blocks %}  
        <div>
          {{
@@ -36,7 +36,7 @@
        </div>
        {% endfor %}
     </div>
-    <div style="text-align:center;">
+    <div class="celebrities-cta pt-40">
         {% if section.settings.url != blank %}
             <a href="{{ section.settings.url }}" class="btn">
             {{ section.settings.url_text }}
@@ -50,7 +50,7 @@
 {
   "name": "LOS Celebrities",
   "tag": "section",
-  "class": "los-vedix",
+  "class": "los-celebrities section-spacing-lg",
   "max_blocks": 3,
   "settings": [
         {
@@ -111,17 +111,30 @@
 
 
 {% stylesheet %}
+
+.los-celebrities{
+    background-color: #f7eedf;
+}
+ 
+.celebrities-cta {
+  text-align: center;
+}
     
-.los-vedix-grid {
+.los-vedix-celebrities-grid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.5rem;
     text-align: center;
 }
 
+.los-vedix-celebrities-grid img {
+  border-radius: 10px;
+}
+
 .secondary_image{
     width: 12rem;
 }
+
 
 
 {% endstylesheet %}
