@@ -18,8 +18,15 @@ h1,h2,h3,h4,h5,h6,p{
    color: var(--black);
 }
 
+@media screen and (min-width: 768px){  
+  h1{
+    font-size: 7rem !important;
+    font-weight: 700;
+  }
+}
+
 h1{
-  font-size: 7rem;
+  font-size: 3.4rem;
   font-weight: 700;
 }
 
@@ -147,10 +154,6 @@ a {
   padding-top: 40px
 }
 
-.section-spacing-md {
-   padding: 20px;
-}
-
 .py-20{
   padding-top: 20px;
   padding-bottom: 20px;
@@ -161,10 +164,8 @@ a {
   padding-bottom: 40px;
 }
 
-@media screen and (min-width: 768px){
-  .section-spacing-md {
-   padding: 40px;
-  }
+.section-spacing-md {
+   padding: 20px;
 }
 
 .section-spacing-lg {
@@ -174,6 +175,15 @@ a {
 @media screen and (min-width: 768px){
   .section-spacing-lg {
    padding: 60px;
+  }
+
+  .section-spacing-md {
+   padding: 40px;
+  }
+
+  h1{
+    font-size: 7rem;
+    font-weight: 700;
   }
 }
 
