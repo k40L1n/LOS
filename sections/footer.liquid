@@ -1,26 +1,26 @@
 <footer class="footer container">
   <div class="footer-company-info">
-    <h3>Vedix</h3>
-    <p>Copyright © 2023 | All Rights Reserved</p>
+    <h3 class="footer-brand">Vedix</h3>
+    <p class="footer-copyright">Copyright © 2023 | All Rights Reserved</p>
     <div class="social-icons">
       <span>
-        {% render 'los-icons', icon: 'facebook' %}
+        <a href="#">{% render 'los-icons', icon: 'facebook' %}</a>
       </span>
        <span>
-        {% render 'los-icons', icon: 'twitter' %}
+        <a href="#">{% render 'los-icons', icon: 'twitter' %}</a>
       </span>
        <span>
-        {% render 'los-icons', icon: 'youtube' %}
+        <a href="#">{% render 'los-icons', icon: 'youtube' %}</a>
       </span>
     </div>    
   </div>
   <div class="footer-links">
     <h3>Quick Links</h3>
     <ul>
-      <li><a href="#"></a>Link</li>
-      <li><a href="#"></a>Link</li>
-      <li><a href="#"></a>Link</li>
-      <li><a href="#"></a>Link</li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
     </ul>
   </div>
   <div class="footer-contact-us">
@@ -32,18 +32,38 @@
       {% render 'los-icons', icon: 'headphone' %}
       +1 213 221 3659</p>
   </div>
-
-
-  <div class="zxc">
-   
-  </div>
-
 </footer>
 
 
 
 {% stylesheet %}
   
+  
+  .footer-brand{
+    font-size: 2rem;
+  }
+  .footer-copyright{
+    font-size: 1.4rem;
+    margin: 1.5rem 0;
+  }
+
+  .footer-links a {
+    font-size: 1.4rem;
+    text-decoration: underline;  
+    color: var(--black);
+  }
+
+  .footer-contact-us a, .footer-contact-us p{
+    font-size:1.4rem;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    margin: 10px 0;
+  }
+
+  .footer-contact-us svg {
+    margin-right: 10px;
+  }
 
   .shopify-section-group-footer-group {
     background-color: var(--light-gray);
@@ -58,6 +78,19 @@
   .footer-links ul li {
     padding-left: 0;
   }
+
+
+  .social-icons a {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+  }
+
+  .social-icons a svg {
+    height: 100%;
+    width: 100%;
+  }
+
 
   @media screen and (min-width: 768px) {
      .shopify-section-group-footer-group {
