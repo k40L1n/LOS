@@ -2,8 +2,8 @@
   --black: #131818;
   --white: #ffffff;
   --orange: #EB7462;
-  --skin: #faf7f1;
-  --skin-dark: #f7efdf;
+  --light-gray: #faf7f1;
+  --dark-gray: #f7efdf;
 }
 
 /* Custom Resets */
@@ -126,6 +126,13 @@ a {
 
 .p-0 {
   padding:0 !important;
+}
+
+.pl-0{
+  padding-left: 0;
+}
+.pr-0{
+  padding-right: 0;
 }
 
 .pl-10{

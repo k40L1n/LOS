@@ -13,9 +13,9 @@
         {% for block in section.blocks %}  
        <div class="los-vedix-grid--col">
         
-        {% if forloop.index == 1 %}
+        {% if forloop.index == 1 and block.settings.highlight_text != blank %}
           <div class="highlight-badge cutoff">
-            <h3>How it works</h3>
+            <h3>{{ block.settings.highlight_text }}</h3>
           </div>  
         {% endif %}
         
@@ -40,6 +40,8 @@
        </div>
        {% endfor %}
     </div>
+
+    <button class="btn mt-40">Customize your kit</button>
 </section>
 
 
@@ -78,6 +80,12 @@
           "label": "Enter the name",
           "id": "heading",
           "default": "Examining Doshas"
+        },
+        {
+          "type": "text",
+          "label": "Enter the highlight text",
+          "id": "highlight_text",
+          "default": "How it works"
         },
         {
           "type": "text",
@@ -134,14 +142,21 @@
   border: 1px solid var(--black);
 }
 
+.los-approach {
+  background-color: var(--light-gray);
+}
+
 .los-approach-content p{
   padding: 20px 40px;
 }
 
-
-
 .los-vedix-approach sub-heading{
   max-width: 660px;
+}
+
+.los-vedix-approach button {
+  margin: 40px auto 0;
+  display: block;
 }
 
 .highlight-badge {

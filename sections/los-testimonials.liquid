@@ -1,42 +1,51 @@
-<section class="container">
-
+<section class="container section-spacing-lg">
+  <h2 class="testimonials-heading">Real Transformations</h2>
     <div class="slider-controls">
-      <button class="prev"><</button>
-      <button class="next">></button>
+      <button class="prev">
+        {% render 'los-icons', icon: 'left-arrow' %}
+      </button>
+      <button class="next">
+        {% render 'los-icons', icon: 'right-arrow' %}
+      </button>
     </div>
 
     <div class="slider">
-        <div class="slide active slide-1">
+        <div class="slide active cutoff">
            <div class="images">
             <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_287.png?v=1703852789" alt="">
             <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_288.png?v=1703852789" alt="">
             </div>
-           <div>
-            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
-            <b>Shafaq naaz</b>
-            <span>Kolkata</span>
+           <div class="slide-content">
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt. 
+               <p><b>Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</b></p>
+            <p class="pt-20"><b>Shafaq naaz 1</b></p>
+            <p>Kolkata</p>
            </div>
         </div>
-        <div class="slide slide-2">
-           <div>
-            <img src="" alt="">
-            <img src="" alt="">
+        <div class="slide cutoff">
+           <div class="images">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_287.png?v=1703852789" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_288.png?v=1703852789" alt="">
             </div>
-           <div>
-            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
-            <b>Shafaq naaz</b>
-            <span>Kolkata</span>
+            <div class="slide-content">
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt. 
+              <p><b>Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</b></p>
+            </p>
+            <p class="pt-20"><b>Shafaq naaz 2</b></p>
+            <p>Howrah</p>
            </div>
         </div>
-        <div class="slide slide-3">
-           <div>
-            <img src="" alt="">
-            <img src="" alt="">
+        <div class="slide cutoff">
+           <div class="images">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_287.png?v=1703852789" alt="">
+            <img src="https://cdn.shopify.com/s/files/1/0612/8097/7050/files/image_288.png?v=1703852789" alt="">
             </div>
-           <div>
-            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</p>
-            <b>Shafaq naaz</b>
-            <span>Kolkata</span>
+            <div class="slide-content">
+            <p>"I came across Vedix while browsing one day, and even though I had never heard of them, I answered the questions and ordered my products out of desperation. It was a last hope attempt. 
+             <p><b>Saw my hairfall reduce day after day, and almost stopped after 3 weeks “</b></p>
+            </p>
+            <p class="pt-20"><b>Shafaq naaz 3</b></p>
+            <p>Hoogly</p>
            </div>
         </div>
     </div>
@@ -113,11 +122,12 @@
 
 
 {% stylesheet %}
+.los-testimonials {
+  background-color: #fff9f7;
+}
 
-/* CSS styles */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.testimonials-heading {
+  text-align: center;
 }
 
 .slider {
@@ -135,10 +145,25 @@ body {
   justify-content: center;
   text-align: center;
   width: 100%;
-  background-color: aqua;
+  padding: 0 !important;
 }
 
-x
+.slide-content {
+  padding: 15px;
+}
+
+.slide p{
+  text-align: left;
+  margin: 5px 0;
+}
+
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
 .images{
     display: flex;
 }
@@ -158,6 +183,10 @@ x
   border: 1px solid var(--black);
   height: 30px;
   width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6c5be;
 }
 
 .prev:hover,

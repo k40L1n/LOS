@@ -11,7 +11,7 @@
 
     <div class="los-vedix-grid">
         {% for block in section.blocks %}  
-       <div class="los-vedix-grid--col">
+       <div class="los-vedix-grid--col cutoff">
          <div>
             {{
                 block.settings.main_image
@@ -24,11 +24,11 @@
                 class: 'img-fluid main_image'
             }}
          </div>
-         <div>
+         <div class="los-vedix-grid--col-content">
             <span> Hair </span>
-            <h4>{{ block.settings.heading }}</h4>
+            <h4 class="py-20">{{ block.settings.heading }}</h4>
             <p>{{ block.settings.text }}</p>
-            <a href="{{ block.settings.url }}">{{ block.settings.url_text }}</a>
+            <a href="{{ block.settings.url }}" class="py-20">{{ block.settings.url_text }}</a>
          </div>
        </div>
        {% endfor %}
@@ -110,7 +110,7 @@
     
 .los-vedix-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 1.5rem;
     text-align: center;
 }
@@ -119,6 +119,33 @@
     width: 12rem;
 }
 
+.los-vedix-grid--col {
+  border: 1px solid var(--black);
+  position: relative;
+  padding: 0 !important; 
+}
+
+.los-vedix-grid--col-content {
+  padding: 2.5rem 2.5rem 0 2.5rem;
+  text-align: left;
+}
+
+.los-vedix-grid--col-content span {
+  color: #8573C6;
+  background-color: #E7E3F4;
+  padding: 3px 20px 0px 20px;
+  display: block;
+  max-width: fit-content;
+}
+
+.los-vedix-grid--col-content p {
+  font-size: 14px;
+}
+
+.los-vedix-grid--col-content a{
+  font-size: 14px;
+  color: #F26955;
+}
 .counter {
     display: flex;
     width: 40px;

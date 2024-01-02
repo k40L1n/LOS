@@ -1,11 +1,17 @@
-<footer class="footer container section-spacing">
+<footer class="footer container">
   <div class="footer-company-info">
     <h3>Vedix</h3>
     <p>Copyright © 2023 | All Rights Reserved</p>
     <div class="social-icons">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span>
+        {% render 'los-icons', icon: 'facebook' %}
+      </span>
+       <span>
+        {% render 'los-icons', icon: 'twitter' %}
+      </span>
+       <span>
+        {% render 'los-icons', icon: 'youtube' %}
+      </span>
     </div>    
   </div>
   <div class="footer-links">
@@ -19,13 +25,17 @@
   </div>
   <div class="footer-contact-us">
     <h3>Contact Us</h3>
-    <a href="mailto:support@vedix.com">support@vedix.com</a>
-    <p>+1 213 221 3659</p>
+    <a href="mailto:support@vedix.com">
+      {% render 'los-icons', icon: 'mail' %}
+      support@vedix.com</a>
+    <p>
+      {% render 'los-icons', icon: 'headphone' %}
+      +1 213 221 3659</p>
   </div>
 
 
   <div class="zxc">
-   {% render 'los-icons', icon: 'aishah' %}
+   
   </div>
 
 </footer>
@@ -34,20 +44,27 @@
 
 {% stylesheet %}
   
+
+  .shopify-section-group-footer-group {
+    background-color: var(--light-gray);
+    padding: 20px;
+  }
+
   .footer{
     display: grid;
     grid-template-columns: 4fr 1fr 1fr;
-    background-color: var(--skin);
+    
   }
   .footer-links ul li {
     padding-left: 0;
   }
 
-  @media screen and (min-width: 768px)
-  .section-spacing {
-      padding-left: var(--spacing_lg);
-      padding-right: var(--spacing_lg);
-}
+  @media screen and (min-width: 768px) {
+     .shopify-section-group-footer-group {
+      padding: 40px 0;
+    }
+  }
+  
   
 
 {% endstylesheet %}
